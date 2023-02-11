@@ -17,6 +17,34 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+
+
+
+    signingConfigs {
+        debug {
+            //keyAlias keyPassword storeFile  storePassword
+        }
+        release {
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+
+    flavorDimensions "recetas-yape"
+    productFlavors{
+        desarrollo{
+            dimension "recetas-yape"
+            buildConfigField("String", "url_api", "\"http://demo1787648.mockable.io/\"")
+        }
+        produccion{
+            dimension "recetas-yape"
+            buildConfigField("String", "url_api", "\"http://demo1787648.mockable.io/\"")
+        }
+    }
+
+
+
     buildTypes {
         release {
             minifyEnabled false
@@ -46,28 +74,27 @@ android {
     }
 
 
-    flavorDimensions "recetas-yape"
-    productFlavors{
-        desarrollo{
-            buildConfigField("String", "url_api", "\"http://google.com.mx/\"")
-        }
-        produccion{
-            buildConfigField("String", "url_api", "\"http://google.com/\"")
-        }
-    }
+
 
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:+'
+
     def versionRetrofit_Gson = '2.9.0'
     def versionRecycle='1.2.1'
     def okhttp = "4.9.0"
+    def rxJavaVersion = '2.2.18'
+    def rxAndroidVersion = '2.1.1'
+
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
+
+    //rxJava
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
 
     // Recuperar datos externos con retrofit, el interceptor http y el convertidor gson
     implementation "com.squareup.retrofit2:retrofit:$versionRetrofit_Gson"

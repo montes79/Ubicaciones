@@ -4,7 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.os.Build
 import android.util.Log
-import androidx.databinding.library.baseAdapters.BuildConfig
+import com.luis.montes.ubicaciones.BuildConfig
 import com.luis.montes.ubicaciones.servicios.RecetasServicio
 import okhttp3.OkHttpClient
 import okhttp3.Protocol
@@ -56,7 +56,7 @@ class RecetasDroidApp : Application() {
 
         val retrofitInstancia= Retrofit.Builder()
             .client(clientOkHttp())
-           .baseUrl(BuildConfig.BUILD_TYPE)
+           .baseUrl(BuildConfig.url_api)
             .addConverterFactory(GsonConverterFactory.create())
             //.addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
