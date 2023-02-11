@@ -1,0 +1,766 @@
+{
+ "codigo": 200,
+ "mensaje": "Listado de recetas OK",
+ "datos": [
+
+
+
+    {
+        "idReceta":1001,
+        "nombreReceta":"Mole poblano",
+        "fechaPublicacion":"2021-09-15",
+        "modoPreparacion": [
+        "Elaboración paso a paso","En una olla ponga a hervir en agua las 7 piernas de pollo por 1 hora",
+        "En otra olla mezcle un paquete de nuestro Mole Poblano Deshidratado con 500 ml de agua y bátalo hasta que todo esté bien mezclado.",
+        "Caliente el Mole 5 minutos a fuego lento.",
+        "Cuando el pollo esté cocido, saquelo de la olla, retire el agua y cúbralo con el Mole caliente",
+        "Sirva caliente y disfrute con tortillas y refresco/soda"],
+        "pais":"Mexico",
+        "latitud":19.0425686,
+        "longitud":-98.1979228,
+        "ingredientes":[
+             {
+                "idIngrediente":2001,
+                "nombre":"Chile seco",
+                "cantidad":"3",
+                "unidadMedida":"pza."
+             },
+             {
+                "idIngrediente":2002,
+                "nombre":"Azucar",
+                "cantidad":"400",
+                "unidadMedida":"grs."
+             },
+             {
+                "idIngrediente":2003,
+                "nombre":"Cacahuates",
+                "cantidad":"400",
+                "unidadMedida":"grs."
+             },
+             {
+                "idIngrediente":2004,
+                "nombre":"Jitomates",
+                "cantidad":"5",
+                "unidadMedida":"pza."
+             },
+             {
+                "idIngrediente":2005,
+                "nombre":"Chile guajillo",
+                "cantidad":"3",
+                "unidadMedida":"pza."
+             }
+        ],
+        "imagenes":[
+            {
+
+                "idImagen":3001,
+                "urlImagen":"https://laroussecocina.mx/wp-content/uploads/2017/12/mole-poblano-001-larousse-cocina_0-e1671586546996.jpg",
+                "isPortada":false,
+                "orden":1
+            },
+            {
+
+                "idImagen":3002,
+                "urlImagen":"https://www.mexicodesconocido.com.mx/wp-content/uploads/2010/09/Mole-poblano.jpg",
+                "isPortada":true,
+                "orden":2
+            },
+            {
+                "idImagen":3003,
+                "urlImagen":"https://i1.wp.com/itraalimentos.com/wp-content/uploads/2020/12/AdobeStock_273956677-min-scaled.jpeg?resize=2048%2C1365&ssl=1",
+                "isPortada":false,
+                "orden":3
+            }
+        ]
+    },
+
+
+
+
+
+    {
+        "idReceta":1002,
+        "nombreReceta":"Pizza Salami",
+        "fechaPublicacion":"2021-10-02",
+        "modoPreparacion": [
+        "En un recipiente mezcla la premezcla de harina para pizza sin gluten junto con la levadura.",
+        "Agrega el aceite y mezcla hasta incorporarlo totalmente; posteriormente agrega agua hasta obtener una masa suave y homogénea",
+        "Con la ayuda de un rodillo forma la base de la pizza para celíacos sobre una superficie enharinada para evitar que la masa se pegue, y colócala en una charola engrasada o cubierta con papel encerado.",
+        "Deja fermentar la base por 15 minutos cerca del horno o de alguna otra fuente de calor. Transcurrido este tiempo, agrega el puré de tomate, el queso y los ingredientes al gusto.",
+        "Hornea la pizza sin gluten con premezcla a 200-220 ºC de 15 a 18 minutos, o hasta que el contorno de la masa esté dorado y el centro bien cocido. Sirve mientras esta caliente acompañada de tus aliños favoritos."],
+        "pais":"Italia",
+        "latitud": 40.868348,
+        "longitud": 14.282288,
+        "ingredientes":[
+             {
+                "idIngrediente":2005,
+                "nombre":"premezcla de harina sin gluten para pizza",
+                "cantidad":"500",
+                "unidadMedida":"grs."
+             },
+             {
+                "idIngrediente":2006,
+                "nombre":"aceite vegetal",
+                "cantidad":"4",
+                "unidadMedida":"cucharadas."
+             },
+             {
+                "idIngrediente":2007,
+                "nombre":"Levadura seca",
+                "cantidad":"2",
+                "unidadMedida":"cucharaditas."
+             },
+             {
+                "idIngrediente":2008,
+                "nombre":"Pure de tomate",
+                "cantidad":"1",
+                "unidadMedida":"taza."
+             },
+             {
+                "idIngrediente":2009,
+                "nombre":"Queso mozarella",
+                "cantidad":"200",
+                "unidadMedida":"grs."
+             }
+        ],
+        "imagenes":[
+            {
+
+                "idImagen":3004,
+                "urlImagen":"https://www.olivetto.com.co/wp-content/uploads/Olivetto-Experimenta-PizzaItalianaClasica.jpg",
+                "isPortada":false,
+                "orden":1
+            },
+            {
+
+                "idImagen":3005,
+                "urlImagen":"https://mejorconsalud.as.com/wp-content/uploads/2015/05/pizza1.jpg",
+                "isPortada":true,
+                "orden":2
+            }
+            
+        ]
+    },
+
+
+
+
+
+
+
+
+    {
+        "idReceta":1003,
+        "nombreReceta":"Sándwich de Pastrami",
+        "fechaPublicacion":"2021-10-02",
+        "modoPreparacion": [
+        "Pesamos y medimos todos los ingredientes que usaremos en la preparación de la salmuera y limpiamos la carne de restos de grasa",
+        "Empezamos tostando las semillas en una sartén durante unos minutos, hasta que empiecen a desprender su aceite y aroma.",
+        "Cuando está totalmente fría sumergimos la carne en ella, la tapamos con film y la guardamos en la nevera, donde la dejaremos seis días",
+        "A continuación molemos la mezcla de especias que habíamos reservado y la mezclamos con la mostaza en grano y una cucharada de pimentón dulce ahumado",
+        "El famoso sándwich de pastrami con un pan casero que no falta en el congelador y por supuesto mucha mostaza, también con el sello de la casa"],
+        "pais":"Inglaterra(Oxford Univ.)", 
+        "latitud":51.754959,
+        "longitud":-1.254398,
+        "ingredientes":[
+             {
+                "idIngrediente":2010,
+                "nombre":"tapa de ternera",
+                "cantidad":"2",
+                "unidadMedida":"kgs."
+             },
+             {
+                "idIngrediente":2011,
+                "nombre":"azúcar moreno",
+                "cantidad":"100",
+                "unidadMedida":"grs."
+             },
+             {
+                "idIngrediente":2012,
+                "nombre":"sal marina",
+                "cantidad":"200",
+                "unidadMedida":"grs."
+             },
+             {
+                "idIngrediente":2013,
+                "nombre":"pimentón dulce ahumado",
+                "cantidad":"2",
+                "unidadMedida":"cucharada."
+             },
+             {
+                "idIngrediente":2014,
+                "nombre":"mezcla de especias anterior molidas",
+                "cantidad":"3",
+                "unidadMedida":"cucharada."
+             }
+        ],
+        "imagenes":[
+            {
+
+                "idImagen":3006,
+                "urlImagen":"https://images.hola.com/imagenes/cocina/recetas/20210209184050/sandwich-frio-de-pastrami-queso-feta/0-918-74/sandwich-pastrami-m.jpg",
+                "isPortada":false,
+                "orden":1
+            },
+            {
+
+                "idImagen":3007,
+                "urlImagen":"https://content-images.weber.com/content/000-sandwich.jpg?w=725&auto=compress,format&blend=https://ux2cms.imgix.net/system-images/gray-overlay-large.png?bs=inherit&balph=0&bm=normal",
+                "isPortada":false,
+                "orden":2
+            },
+            {
+                "idImagen":3008,
+                "urlImagen":"https://www.tapasmagazine.es/wp-content/uploads/2021/10/Katz-Julio-2021-22-scaled.jpg",
+                "isPortada":true,
+                "orden":3
+            }
+        ]
+    },
+
+
+
+
+
+
+
+    {
+        "idReceta":1004,
+        "nombreReceta":"Sarmale o rollitos de carne con hojas de repollo",
+        "fechaPublicacion":"2021-12-24",
+        "modoPreparacion": [
+        "Lo primero que tenemos que hacer es el relleno de carne. Para ello pelamos 1 cebolla y 2 dientes de ajo y los picamos finamente.",
+        "En una sartén, echamos 2 cucharadas de aceite de oliva virgen extra y cuando esté caliente añadimos la cebolla, el ajo picado y 1 pizca de sal. Sofreímos hasta que la cebolla esté tierna.",
+        "Seguidamente, añadimos 2 cucharadas de aceite de oliva virgen extra, 250 g de carne de ternera picada, 250 g de carne de cerdo picada y las cocinamos a fuego medio-alto hasta que cambie de colo.",
+        "Mezclamos para que se integren todos los ingredientes y cocinamos a fuego medio 15 minutos más.",
+        "En el centro de cada hoja de repollo ponemos un par de cucharadas del relleno de carne picada"],
+        "pais":"Rumania",
+        "latitud":45.654524,
+        "longitud":25.601357,
+        "ingredientes":[
+             {
+                "idIngrediente":2015,
+                "nombre":"carne de ternera picada",
+                "cantidad":"250",
+                "unidadMedida":"grs."
+             },
+             {
+                "idIngrediente":2016,
+                "nombre":"carne de cerdo picada",
+                "cantidad":"250",
+                "unidadMedida":"grs."
+             },
+             {
+                "idIngrediente":2017,
+                "nombre":"arroz bomba",
+                "cantidad":"80",
+                "unidadMedida":"grs."
+             },
+             {
+                "idIngrediente":2018,
+                "nombre":"salsa de tomate",
+                "cantidad":"600",
+                "unidadMedida":"mls."
+             },
+             {
+                "idIngrediente":2019,
+                "nombre":"hojas de repollo",
+                "cantidad":"8",
+                "unidadMedida":"pza."
+             }
+        ],
+        "imagenes":[
+            {
+
+                "idImagen":3009,
+                "urlImagen":"https://cocimaniacos.com/wp-content/uploads/2020/05/95956512_10157271855283008_7355451911845183488_o.jpg",
+                "isPortada":true,
+                "orden":1
+            },
+            {
+
+                "idImagen":3010,
+                "urlImagen":"https://img-global.cpcdn.com/recipes/7403febb38ea6758/1200x630cq70/photo.jpg",
+                "isPortada":false,
+                "orden":2
+            },
+            {
+                "idImagen":3011,
+                "urlImagen":"https://www.recetasderechupete.com/wp-content/uploads/2014/01/sarmale_rollitos_repollo.jpg",
+                "isPortada":false,
+                "orden":3
+            }
+        ]
+    },
+
+
+
+
+
+
+
+
+    {
+        "idReceta":1005,
+        "nombreReceta":"Banana split",
+        "fechaPublicacion":"2022-03-08",
+        "modoPreparacion": [
+        "batimos por cada banana split, 50 ml de nata con un 35% de materia grasa",
+        "Debe estar muy fría para que monte bien. No le vamos a añadir azúcar ya que los helados ya llevan suficiente.",
+        "cortar 1 banana o plátano. Para ello, en primer lugar lo pelamos y después lo cortamos a lo largo procurando que las dos partes tengan el mismo grosor.",
+        "llenamos un bol con agua caliente que usaremos para calentar la cuchara de los helados para hacer las bolas",
+        "Servimos el banana split inmediatamente."],
+        "pais":"Estados Unidos", 
+        "latitud":40.748852, 
+        "longitud":-73.985655,
+        "ingredientes":[
+             {
+                "idIngrediente":2020,
+                "nombre":"nata para montar",
+                "cantidad":"50",
+                "unidadMedida":"mls."
+             },
+             {
+                "idIngrediente":2021,
+                "nombre":"banana o plátano",
+                "cantidad":"1",
+                "unidadMedida":"pza."
+             },
+             {
+                "idIngrediente":2022,
+                "nombre":"Cacahuates",
+                "cantidad":"400",
+                "unidadMedida":"grs."
+             },
+             {
+                "idIngrediente":2023,
+                "nombre":"helado de vainilla",
+                "cantidad":"1",
+                "unidadMedida":"bola."
+             },
+             {
+                "idIngrediente":2024,
+                "nombre":"helado de fresa",
+                "cantidad":"1",
+                "unidadMedida":"bola."
+             }
+        ],
+        "imagenes":[
+            {
+
+                "idImagen":3012,
+                "urlImagen":"https://www.paulinacocina.net/wp-content/uploads/2021/12/banana-split-helado.jpg",
+                "isPortada":false,
+                "orden":1
+            },
+            {
+
+                "idImagen":3013,
+                "urlImagen":"https://www.lavanguardia.com/files/image_948_465/files/fp/uploads/2021/06/15/60c86d6717761.r_d.1620-752.jpeg",
+                "isPortada":true,
+                "orden":2
+            },
+            {
+                "idImagen":3014,
+                "urlImagen":"http://www.recetario-cocina.com/archivosbd/banana-split.jpg",
+                "isPortada":false,
+                "orden":3
+            }
+        ]
+    },
+
+
+
+
+
+
+
+
+    {
+        "idReceta":1006,
+        "nombreReceta":"Tataki de bonito",
+        "fechaPublicacion":"2022-05-10",
+        "modoPreparacion": [
+        "Empezamos la receta colocando el lomo de bonito de 500 g de peso aproximadamente en un plato hondo.",
+        "Con cuidado de no estropear la pieza de pescado, embadurnamos el lomo por todos sus lados con 2 cucharadas de miel.",
+        "Se agrega 1 cucharada de wasabi y unas gotas de aceite de sésamo.",
+        "Cubrimos el pescado con 200 ml de salsa de soja. Reservamos tapado en el frigorífico",
+        "Una vez hayamos marcado el bonito, retiramos de la sartén y reservamos. Se mexcla y se sirve  :)"],
+        "pais":"Japon", 
+        "latitud":35.684020, 
+        "longitud":139.780025,
+        "ingredientes":[
+             {
+                "idIngrediente":2025,
+                "nombre":"lomo de bonito",
+                "cantidad":"500",
+                "unidadMedida":"grs."
+             },
+             {
+                "idIngrediente":2026,
+                "nombre":"Miel",
+                "cantidad":"2",
+                "unidadMedida":"cucharada."
+             },
+             {
+                "idIngrediente":2027,
+                "nombre":"wasabi",
+                "cantidad":"1",
+                "unidadMedida":"cucharada."
+             },
+             {
+                "idIngrediente":2028,
+                "nombre":"aceite de sésamo",
+                "cantidad":"20",
+                "unidadMedida":"mls."
+             },
+             {
+                "idIngrediente":2029,
+                "nombre":"Ensalada de algas wakame para acompañar el tataki",
+                "cantidad":"1",
+                "unidadMedida":"gusto."
+             }
+        ],
+        "imagenes":[
+            {
+
+                "idImagen":3015,
+                "urlImagen":"https://recetasdecocina.elmundo.es/wp-content/uploads/2014/11/tataki-bonito-receta-facil.jpg",
+                "isPortada":true,
+                "orden":1
+            },
+            {
+
+                "idImagen":3016,
+                "urlImagen":"https://s1.eestatic.com/2021/07/07/cocinillas/recetas/594704590_194559432_1024x576.jpg",
+                "isPortada":false,
+                "orden":2
+            },
+            {
+                "idImagen":3017,
+                "urlImagen":"https://cookingwithdog.com/wp-content/uploads/2019/05/katsuo-tataki-10-600x338.jpg",
+                "isPortada":false,
+                "orden":3
+            }
+        ]
+    },
+
+
+
+
+
+
+
+
+
+
+
+    {
+        "idReceta":1007,
+        "nombreReceta":"Solomillo de cerdo con salsa hoisin",
+        "fechaPublicacion":"2022-06-01",
+        "modoPreparacion": [
+        "limpiamos de los restos de grasa que pueda tener y lo dejamos entero de solomillo",
+        " preparamos el marinado; en un bol ponemos 3 cucharadas de salsa de soja, 1 cucharada de vinagre de arroz, 1 cucharada de miel, 2 cucharadas de salsa hoisin y 1 cucharadita de 5 especias chinas.",
+        "Mezclamos todo bien hasta que esté emulsionado y listo para marinar el solomillo de cerdo.",
+        "Ponemos el solomillo de cerdo en un recipiente y lo cubrimos bien en toda su superficie con la mezcla que hemos preparado",
+        "Retiramos la carne de la plancha y la servimos caliente con un poco de la salsa reservada por encima, el resto de la salsa la ponemos en un cuenco para acompañar"],
+        "pais":"Arabia Saudita",
+        "latitud":26.392548,
+        "longitud": 43.866085,
+        "ingredientes":[
+             {
+                "idIngrediente":2030,
+                "nombre":"solomillo de cerdo",
+                "cantidad":"400",
+                "unidadMedida":"grs."
+             },
+             {
+                "idIngrediente":2031,
+                "nombre":"salsa de soja",
+                "cantidad":"3",
+                "unidadMedida":"cucharada."
+             },
+             {
+                "idIngrediente":2032,
+                "nombre":"vinagre de arroz",
+                "cantidad":"1",
+                "unidadMedida":"cucharada."
+             },
+             {
+                "idIngrediente":2033,
+                "nombre":"mezcla de 5 especias chinas",
+                "cantidad":"1",
+                "unidadMedida":"cucharada."
+             },
+             {
+                "idIngrediente":2034,
+                "nombre":"aceite de sésamo",
+                "cantidad":"10",
+                "unidadMedida":"mls."
+             }
+        ],
+        "imagenes":[
+            {
+
+                "idImagen":3018,
+                "urlImagen":"https://i.blogs.es/79cb81/20120925_0762/1366_2000.jpg",
+                "isPortada":false,
+                "orden":1
+            },
+            {
+
+                "idImagen":3019,
+                "urlImagen":"https://cdn.elcocinerocasero.com/imagen/receta/1000/2021-11-11-21-41-06/solomillo-de-cerdo-al-pedro-ximenez.jpeg",
+                "isPortada":true,
+                "orden":2
+            },
+            {
+                "idImagen":3020,
+                "urlImagen":"https://i.blogs.es/79cb81/20120925_0762/1366_2000.jpg",
+                "isPortada":false,
+                "orden":3
+            }
+        ]
+    },
+
+
+
+
+
+
+
+
+
+    {
+        "idReceta":1008,
+        "nombreReceta":"Poutine",
+        "fechaPublicacion":"2022-10-12",
+        "modoPreparacion": [
+        "lo primero que hay que hacer es pelar y cortar 4 o 5 patatas. Se dejan en agua fría mientras se prepara la salsa y así sueltan el almidón",
+        "se prepara la salsa gravy. Para ello, se pone un cazo a fuego medio con 20 g de mantequilla y se deja derretir con cuidado de que no se queme.",
+        "Se añade al cazo 30 g de harina y se cocina con la mantequilla durante 10 minutos a fuego medio, removiendo para que no se pegue, hasta que la mezcla adquiera un tono dorado.",
+        "Para presentar la poutine, se ponen las patatas en un plato hondo, se añade el queso, cantidad al gusto",
+        "Para rematar, se riega con la salsa gravy de carne y sirva caliente."],
+        "pais":"Canada", 
+        "latitud":50.375123, 
+        "longitud":-89.005754,
+        "ingredientes":[
+             {
+                "idIngrediente":2035,
+                "nombre":"patatas",
+                "cantidad":"5",
+                "unidadMedida":"pza."
+             },
+             {
+                "idIngrediente":2036,
+                "nombre":"mantequilla",
+                "cantidad":"20",
+                "unidadMedida":"grs."
+             },
+             {
+                "idIngrediente":2037,
+                "nombre":"harina de trigo",
+                "cantidad":"30",
+                "unidadMedida":"grs."
+             },
+             {
+                "idIngrediente":2038,
+                "nombre":"caldo de carne o de pollo",
+                "cantidad":"300",
+                "unidadMedida":"mls."
+             },
+             {
+                "idIngrediente":2039,
+                "nombre":"Aceite de girasol",
+                "cantidad":"1",
+                "unidadMedida":"al gusto."
+             }
+        ],
+        "imagenes":[
+            {
+
+                "idImagen":3021,
+                "urlImagen":"https://www.seriouseats.com/thmb/vICHAu16XWhAc-WLQV-7avihHKY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/ultimate-perfect-poutine-fries-cheese-curds-gravy-recipe-hero-2-7637732f8c174bc59f9b84e7b6e6b660.jpg",
+                "isPortada":false,
+                "orden":1
+            },
+            {
+
+                "idImagen":3022,
+                "urlImagen":"https://www.cakenknife.com/wp-content/uploads/2019/01/Cajun-Poutine_6277-768x1154.jpg",
+                "isPortada":false,
+                "orden":2
+            },
+            {
+                "idImagen":3023,
+                "urlImagen":"https://www.bhg.com/thmb/QmHtYN25vth2ajhBSwVPu0hvNoI=/750x0/filters:no_upscale():max_bytes(150000):strip_icc()/quick-poutine-BBOQQT52qRM8_P2JsdQxXI-2336ec1ff4744ee89333a3da76fd7ae3.jpg",
+                "isPortada":true,
+                "orden":3
+            }
+        ]
+    },
+
+
+
+
+
+
+
+
+
+    {
+        "idReceta":1009,
+        "nombreReceta":"Pollo paprika húngaro",
+        "fechaPublicacion":"2022-09-18",
+        "modoPreparacion": [
+        "En una sartén grande o una olla, poner a calentar el aceite de oliva a fuego medio y, cuando esté caliente, añadir la cebolla",
+        "Cuando la cebolla esté pochada, espolvorear la harina, mezclar bien y cocinar por dos minutos más para que pierda el sabor a crudo.",
+        "Incorporar el pollo a la olla y sazonar con sal al gusto.",
+        "ubrir con agua a ras del pollo. Tapar y calentar a fuego fuerte, cuando rompa a hervir, bajar el fuego",
+        "Servir el pollo al pimentón húngaro acompañado con la pasta y espolvoreado con perejil fresco picado."],
+        "pais":"Hungria", 
+        "latitud":47.482384,
+        "longitud":19.068604,
+        "ingredientes":[
+             {
+                "idIngrediente":2040,
+                "nombre":"pollo troceados",
+                "cantidad":"8",
+                "unidadMedida":"pza."
+             },
+             {
+                "idIngrediente":2041,
+                "nombre":"cebollas grandes en juliana",
+                "cantidad":"2",
+                "unidadMedida":"pza."
+             },
+             {
+                "idIngrediente":2042,
+                "nombre":"aceite de oliva",
+                "cantidad":"4",
+                "unidadMedida":"cucharada."
+             },
+             {
+                "idIngrediente":2043,
+                "nombre":"nata para cocinar",
+                "cantidad":"100",
+                "unidadMedida":"mls."
+             },
+             {
+                "idIngrediente":2044,
+                "nombre":"Perejil fresco picado y sal",
+                "cantidad":"1",
+                "unidadMedida":"al gusto."
+             }
+        ],
+        "imagenes":[
+            {
+
+                "idImagen":3024,
+                "urlImagen":"https://cocinarrecetasdepostres.net/wp-content/uploads/2019/04/wordpressomatic/hungarian-chicken-paprikash-recipe-2.jpg",
+                "isPortada":true,
+                "orden":1
+            },
+            {
+
+                "idImagen":3025,
+                "urlImagen":"https://comerconplacer.files.wordpress.com/2011/02/p7.jpg",
+                "isPortada":false,
+                "orden":2
+            },
+            {
+                "idImagen":3026,
+                "urlImagen":"https://www.confiesoquecocino.com/wp-content/uploads/2018/09/paprikash-pollo-portada.jpg",
+                "isPortada":false,
+                "orden":3
+            }
+        ]
+    },
+
+
+
+
+
+
+
+      {
+        "idReceta":1010,
+        "nombreReceta":"Bacalao a la portuguesa",
+        "fechaPublicacion":"2023-02-13",
+        "modoPreparacion": [
+        "Lo primero que vamos a hacer será poner a calentar una sartén con un chorrito de aceite de oliva virgen extra y doramos los dientes de ajo a fuego medio",
+        " incorporamos la cebolla que la habremos pelado y cortado en juliana. Salpimentamos y rehogamos durante unos 15 minutos o hasta que la cebolla quede tierna.",
+        "Añadimos el pimentón dulce, mezclamos y seguidamente echamos el vino blanco y dejamos al fuego unos minutos más hasta que se evapore el alcohol",
+        "Ahora nos ponemos con las patatas, las pelamos y las cortamos en rodajas transversales de unos 5 mm de grosor",
+        "Le damos una fritura corta,las dejamos sobre papel absorbente para retirar el exceso de aceite. Mezclamos y servimos"],
+        "pais":"Portugal", 
+        "latitud":41.158855,
+        "longitud":-8.635001,
+        "ingredientes":[
+             {
+                "idIngrediente":2045,
+                "nombre":"lomos de bacalao desalado",
+                "cantidad":"500",
+                "unidadMedida":"grs."
+             },
+             {
+                "idIngrediente":2046,
+                "nombre":" patatas medianas",
+                "cantidad":"4",
+                "unidadMedida":"pza."
+             },
+             {
+                "idIngrediente":2047,
+                "nombre":"cebollas medianas",
+                "cantidad":"2",
+                "unidadMedida":"pza."
+             },
+             {
+                "idIngrediente":2048,
+                "nombre":"vino blanco",
+                "cantidad":"125",
+                "unidadMedida":"mls."
+             },
+             {
+                "idIngrediente":2049,
+                "nombre":"dientes de ajo",
+                "cantidad":"3",
+                "unidadMedida":"pza."
+             },
+             {
+               "idIngrediente":2050,
+               "nombre":"Harina,sal,pimienta, aceite de oliva, perejil",
+               "cantidad":"1",
+               "unidadMedida":"al gusto."
+            }
+        ],
+        "imagenes":[
+            {
+
+                "idImagen":3027,
+                "urlImagen":"https://cdn1.cocina-familiar.com/recetas/thumb/bacalao-a-la-portuguesa.JPG",
+                "isPortada":false,
+                "orden":1
+            },
+            {
+
+                "idImagen":3028,
+                "urlImagen":"https://lacocinadefrabisa.lavozdegalicia.es/wp-content/uploads/2020/04/BACALAO-A-LA-PORTUGUESA.jpg",
+                "isPortada":true,
+                "orden":2
+            },
+            {
+                "idImagen":3029,
+                "urlImagen":"https://cdn7.recetasdeescandalo.com/wp-content/uploads/2020/02/Bacalao-a-la-portuguesa-al-horno-al-estilo-a-Margarida-da-Praca.jpg",
+                "isPortada":false,
+                "orden":3
+            }
+        ]
+    }
+
+
+
+
+ ]
+}

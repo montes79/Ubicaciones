@@ -8,6 +8,7 @@ import io.reactivex.Single
 
 interface RecetasServicio {
 
+    // http://demo1787648.mockable.io/listadoRecetas
     @Headers("Content-Type: application/json")
     @GET("/listadoRecetas")
     fun getListadoRecetas() : Single<RespuestaServicioRecetas>
