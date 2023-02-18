@@ -83,10 +83,10 @@ dependencies {
 
 
     def versionRetrofit_Gson = '2.9.0'
-    def retrofitRX = '2.4.0'
+    def retrofitRX = '2.9.0'
     def versionRecycle='1.2.1'
     def okhttp = "4.9.0"
-    def rxJavaVersion = '2.2.18'
+    def rxJavaVersion = '2.2.21'
     def rxAndroidVersion = '2.1.1'
     def coroutinesVersion = '1.6.4'
     def coroutinesLifeCycleVersion ='2.5.1'
