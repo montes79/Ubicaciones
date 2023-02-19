@@ -3,4 +3,5 @@
     <string name="titulo_btn_test">Llamar</string>
     <string name="titulo_pais">PAIS</string>
     <string name="titulo_platillo">Nombre del platillo</string>
+    <string name="url_invalida">#</string>
 </resources>
