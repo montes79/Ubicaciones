@@ -6,10 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.luis.montes.ubicaciones.data.modelos.Recetas
 import com.luis.montes.ubicaciones.databinding.ElementoRecetaBinding
 
-/*
-    var listaProcesosREF:MutableList<ListadoRefinanciamientosPorMasterContract>,
-    var listener: (elemento: ListadoRefinanciamientosPorMasterContract)->Unit
-*/
 class RecetasAdaptador(
     var listaRecetas:MutableList<Recetas>,
     private val listener:(elemento:Recetas)->Unit

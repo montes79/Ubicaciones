@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
@@ -57,6 +59,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun agregaListeners(){
         binding.btnLlamada.setOnClickListener {
+            inicializarAdaptador()
             llamarRecuperacionListado()
         }
     }
@@ -73,6 +76,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun listenerTapRecyclerView(receta:Recetas){
+        Toast.makeText(this,receta.nombre,Toast.LENGTH_SHORT).show()
 
     }
 
@@ -116,6 +120,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun llamarRecuperacionListado(){
+        binding.barraProgreso.visibility= View.VISIBLE
         vmRecetas.recuperaListadoRecetasMockeableIO(peticionServicioRecetas)
     }
 
@@ -124,9 +129,11 @@ class MainActivity : AppCompatActivity() {
             when (estado){
                     is UIState.Success -> {
                         Log.d("RECETAS","Llamada ok")
+                        binding.barraProgreso.visibility= View.GONE
                         actualizaRecyclerRecetas(estado.data.datosRecetas)
                     }
                     is UIState.Error -> {
+                        binding.barraProgreso.visibility= View.GONE
                         // Ocultar cuadro de dialogo de error y/o reintentar
                         Log.d("RECETAS","Ocurrio un error:* ${estado.error}, la excepcion es: ${estado.exception} *")
                     }

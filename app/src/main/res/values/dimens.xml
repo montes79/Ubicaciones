@@ -2,6 +2,7 @@
 <resources>
     <dimen name="M2dp">2dp</dimen>
     <dimen name="M4dp">4dp</dimen>
+    <dimen name="M6dp">6dp</dimen>
     <dimen name="M8dp">8dp</dimen>
     <dimen name="M10dp">10dp</dimen>
     <dimen name="M10sp">10sp</dimen>
@@ -11,5 +12,6 @@
     <dimen name="M20dp">20dp</dimen>
     <dimen name="M25dp">25dp</dimen>
     <dimen name="M40dp">40dp</dimen>
+    <dimen name="M45dp">45dp</dimen>
 
 </resources>

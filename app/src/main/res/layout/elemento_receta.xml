@@ -7,22 +7,22 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/M12dp"
+        android:layout_marginBottom="@dimen/M8dp"
         app:cardCornerRadius="@dimen/M16dp"
         app:cardElevation="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="@dimen/M16dp"
-            android:paddingTop="@dimen/M20dp"
+            android:paddingStart="@dimen/M12dp"
+            android:paddingTop="@dimen/M6dp"
             android:paddingEnd="@dimen/M16dp"
-            android:paddingBottom="@dimen/M20dp">
+            android:paddingBottom="@dimen/M10dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imagenReceta"
-                android:layout_width="@dimen/M40dp"
-                android:layout_height="@dimen/M40dp"
+                android:layout_width="@dimen/M45dp"
+                android:layout_height="@dimen/M45dp"
                 android:layout_marginStart="@dimen/M8dp"
                 android:src="@drawable/ic_auto_awesome_mosaic"
                 app:civ_border_color="@color/white"
@@ -37,13 +37,14 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:gravity="center"
-                android:maxLines="1"
+                android:maxLines="2"
+                 android:paddingStart="@dimen/M2dp"
                 android:paddingTop="@dimen/M4dp"
-                android:paddingStart="@dimen/M2dp"
                 android:paddingEnd="@dimen/M4dp"
                 android:textSize="@dimen/M10sp"
                 app:layout_constraintBottom_toBottomOf="@+id/imagenReceta"
                 app:layout_constraintEnd_toEndOf="@+id/imagenReceta"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imagenReceta"
                 tools:background="@drawable/background_yellow"
                 tools:text="@string/titulo_pais"
@@ -57,7 +58,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/viewSeparator"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@id/nombrePais"
+                app:layout_constraintStart_toEndOf="@+id/imagenReceta"
                 app:layout_constraintTop_toTopOf="@+id/imagenReceta"
                 app:layout_constraintVertical_bias="0.0">
 
@@ -89,9 +90,10 @@
                 android:layout_height="3dp"
                 android:background="@color/light_yellow"
                 android:paddingTop="@dimen/M8dp"
-                           app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

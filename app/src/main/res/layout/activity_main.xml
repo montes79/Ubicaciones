@@ -18,16 +18,28 @@
         android:text="@string/titulo_btn_test"
       />
 
+        <ProgressBar
+            android:id="@+id/barraProgreso"
+            android:visibility="invisible"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintHorizontal_bias="0.498"
+            />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvRecetas"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:itemCount="1"
+            tools:itemCount="6"
             tools:listitem="@layout/elemento_receta"
 
             />
+
+
 
 
     </LinearLayout>
