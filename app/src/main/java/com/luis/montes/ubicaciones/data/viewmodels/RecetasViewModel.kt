@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.luis.montes.ubicaciones.casosdeuso.RecetasRecuperarCasoUso
-import com.luis.montes.ubicaciones.data.modelos.RespuestaServicioRecetas
+import com.luis.montes.ubicaciones.data.modelos.respuesta.RespuestaServicioRecetas
 import com.luis.montes.ubicaciones.data.modelos.peticion.PeticionServicioRecetas
 import com.luis.montes.ubicaciones.utilidades.UIState
 import com.luis.montes.ubicaciones.utilidades.asLiveData
@@ -28,7 +28,7 @@ class RecetasViewModel (
         _loaderPantalla.update { false } // Que se oculte el ProgressBar :)
         when(respuestaServicio){
             is Result.Success -> preResultadoProceso.update { UIState.Success(respuestaServicio.data)}
-            is Result.Error -> preResultadoProceso.update { UIState.Error(respuestaServicio.error)}
+            is Result.Error -> preResultadoProceso.update { UIState.Error(respuestaServicio.error, respuestaServicio.exception)}
         }
 
         preResultadoProceso.update{ UIState.InitialState }

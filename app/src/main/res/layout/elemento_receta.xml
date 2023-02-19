@@ -20,7 +20,7 @@
             android:paddingBottom="@dimen/M20dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imageProfile"
+                android:id="@+id/imagenReceta"
                 android:layout_width="@dimen/M40dp"
                 android:layout_height="@dimen/M40dp"
                 android:layout_marginStart="@dimen/M8dp"
@@ -32,7 +32,7 @@
 
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/rol"
+                android:id="@+id/nombrePais"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
@@ -42,11 +42,11 @@
                 android:paddingStart="@dimen/M2dp"
                 android:paddingEnd="@dimen/M4dp"
                 android:textSize="@dimen/M10sp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageProfile"
-                app:layout_constraintEnd_toEndOf="@+id/imageProfile"
-                app:layout_constraintTop_toBottomOf="@+id/imageProfile"
+                app:layout_constraintBottom_toBottomOf="@+id/imagenReceta"
+                app:layout_constraintEnd_toEndOf="@+id/imagenReceta"
+                app:layout_constraintTop_toBottomOf="@+id/imagenReceta"
                 tools:background="@drawable/background_yellow"
-                tools:text="PAIS"
+                tools:text="@string/titulo_pais"
                 tools:textColor="@color/amber" />
 
             <LinearLayout
@@ -57,8 +57,8 @@
                 app:layout_constraintBottom_toTopOf="@+id/viewSeparator"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@id/rol"
-                app:layout_constraintTop_toTopOf="@+id/imageProfile"
+                app:layout_constraintStart_toEndOf="@id/nombrePais"
+                app:layout_constraintTop_toTopOf="@+id/imagenReceta"
                 app:layout_constraintVertical_bias="0.0">
 
                 <LinearLayout
@@ -71,12 +71,12 @@
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/nameIntegranteRefinanciamiento"
+                        android:id="@+id/nombrePlatillo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/M14sp"
                         android:textStyle="bold"
-                        tools:text="Nombre del platillo" />
+                        tools:text="@string/titulo_platillo" />
 
                 </LinearLayout>
 

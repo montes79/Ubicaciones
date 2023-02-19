@@ -1,8 +1,8 @@
 package com.luis.montes.ubicaciones
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.AlertDialog
-import android.app.PendingIntent
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -16,7 +16,6 @@ import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.luis.montes.ubicaciones.aplicacion.RecetasDroidApp
@@ -28,12 +27,13 @@ import com.luis.montes.ubicaciones.data.viewmodels.RecetasViewModel
 import com.luis.montes.ubicaciones.data.viewmodels.factory.RecetasVMFactory
 import com.luis.montes.ubicaciones.databinding.ActivityMainBinding
 import com.luis.montes.ubicaciones.utilidades.UIState
+import com.luis.montes.ubicaciones.vistas.RecetasAdaptador
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val retrofitInstancia =RecetasDroidApp.getInstanciaInterfazRetrofit()
 
-    private lateinit var  listaRecetas: ArrayList<Recetas>
+    private lateinit var adaptadorRV:RecetasAdaptador
 
     //Por default es el usuario Luis_Montes
     private lateinit var peticionServicioRecetas: PeticionServicioRecetas
@@ -42,20 +42,16 @@ class MainActivity : AppCompatActivity() {
         RecetasVMFactory(RecetasRecuperarCasoUso(RecetasRepositorio(retrofitInstancia)))
     }
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= DataBindingUtil.setContentView(this,R.layout.activity_main)
         RecetasDroidApp.crearCanalNotificacion()
         peticionServicioRecetas = PeticionServicioRecetas()
-        enableNotifications()
-        Log.d("RECETAS","onCreate preparaRecuperacionListado")
+        // enableNotifications()
         preparaRecuperacionListado()
-        Log.d("RECETAS","onCreate llamarRecuperacionListado")
         creaNotificacionBuilder()
-
         agregaListeners()
+        inicializarAdaptador()
     }
 
 
@@ -66,6 +62,20 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    private fun inicializarAdaptador(){
+        adaptadorRV= RecetasAdaptador(
+            arrayListOf()
+        ) { elemento -> listenerTapRecyclerView(elemento) }
+
+        binding.rvRecetas.adapter=adaptadorRV
+
+
+    }
+
+    private fun listenerTapRecyclerView(receta:Recetas){
+
+    }
+
     private fun creaNotificacionBuilder(){
         /*
         val intent = Intent(this, AlertDetails::class.java).apply {
@@ -75,13 +85,13 @@ class MainActivity : AppCompatActivity() {
         */
 
         val builder = NotificationCompat.Builder(this, RecetasDroidApp.CHANNEL_ID)
-                 .setSmallIcon(com.google.android.material.R.drawable.notify_panel_notification_icon_bg)
-                 .setContentTitle("My notification")
-                 .setContentText("Hello World!")
-                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                // Set the intent that will fire when the user taps the notification
-                 // .setContentIntent(pendingIntent)
-                 .setAutoCancel(true)
+                    .setSmallIcon(com.google.android.material.R.drawable.notify_panel_notification_icon_bg)
+                    .setContentTitle("My notification")
+                    .setContentText("Hello World!")
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                    // Set the intent that will fire when the user taps the notification
+                    // .setContentIntent(pendingIntent)
+                    .setAutoCancel(true)
 
 
             with(NotificationManagerCompat.from(this)) {
@@ -114,10 +124,11 @@ class MainActivity : AppCompatActivity() {
             when (estado){
                     is UIState.Success -> {
                         Log.d("RECETAS","Llamada ok")
+                        actualizaRecyclerRecetas(estado.data.datosRecetas)
                     }
                     is UIState.Error -> {
-                        // Mostrar cuadro de dialogo de error y/o reintentar
-                        Log.d("RECETAS","Ocurrio un error")
+                        // Ocultar cuadro de dialogo de error y/o reintentar
+                        Log.d("RECETAS","Ocurrio un error:* ${estado.error}, la excepcion es: ${estado.exception} *")
                     }
                 else -> Unit
             }
@@ -126,6 +137,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun actualizaRecyclerRecetas(datosRecetas: List<Recetas>) {
+        adaptadorRV.listaRecetas=datosRecetas.toMutableList()
+        adaptadorRV.notifyDataSetChanged()
+    }
 
 
     private fun enableNotifications() {

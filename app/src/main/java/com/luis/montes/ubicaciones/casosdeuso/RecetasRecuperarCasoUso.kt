@@ -2,7 +2,7 @@ package com.luis.montes.ubicaciones.casosdeuso
 
 import android.util.Log
 import com.luis.montes.ubicaciones.aplicacion.repositorio.RecetasRepositorio
-import com.luis.montes.ubicaciones.data.modelos.RespuestaServicioRecetas
+import com.luis.montes.ubicaciones.data.modelos.respuesta.RespuestaServicioRecetas
 import com.luis.montes.ubicaciones.data.modelos.peticion.PeticionServicioRecetas
 import com.luis.montes.ubicaciones.utilidades.Result
 
@@ -10,24 +10,24 @@ class RecetasRecuperarCasoUso (private val repositorio: RecetasRepositorio) {
 
     suspend operator fun invoke(peticion: PeticionServicioRecetas): Result<RespuestaServicioRecetas>{
         try{
-            Log.d("RECETAS","INVOKE")
             val respuesta = repositorio.recuperaListadoRecetas(peticion)
-            if(!respuesta.isSuccessful || respuesta.body() == null) {
-                Log.d("RECETAS","INVOKE SIN BODY o NO SUCCESS")
-                return Result.Error()
+            val bandera=respuesta.isSuccessful
+            val banderaNull = respuesta.body() == null
+            if(!bandera || banderaNull) {
+                Log.d("RECETAS","Es exitoso: $bandera, esNulo el Body: $banderaNull")
+                return Result.Error("No fue exitoso o el body es null","Excepcion generica")
             }
 
             val contenido = respuesta.body()!!
             if(contenido.codigo!=200) {
-                Log.d("RECETAS","INVOKE CODIGO!=200")
-                return Result.Error()
+                Log.d("RECETAS","Codigo de Respuesta: ${contenido.codigo}")
+                return Result.Error("Codigo no es 200","Excepcion generica")
             }
 
-            Log.d("RECETAS","contenido: {${contenido.datosRecetas}}")
             return Result.Success(contenido)
 
         }catch (e:Exception){
-            return Result.Error()
+            return Result.Error("Error o excepcion",e.message.toString())
         }
 
     }
