@@ -20,6 +20,9 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import com.luis.montes.ubicaciones.aplicacion.RecetasDroidApp
 import com.luis.montes.ubicaciones.aplicacion.repositorio.RecetasRepositorio
 import com.luis.montes.ubicaciones.casosdeuso.RecetasRecuperarCasoUso
@@ -33,54 +36,27 @@ import com.luis.montes.ubicaciones.vistas.RecetasAdaptador
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val retrofitInstancia =RecetasDroidApp.getInstanciaInterfazRetrofit()
 
-    private lateinit var adaptadorRV:RecetasAdaptador
-
-    //Por default es el usuario Luis_Montes
-    private lateinit var peticionServicioRecetas: PeticionServicioRecetas
-
-    private val vmRecetas : RecetasViewModel by viewModels{
-        RecetasVMFactory(RecetasRecuperarCasoUso(RecetasRepositorio(retrofitInstancia)))
+    private val navHostInit: NavHostFragment by lazy {
+        supportFragmentManager.findFragmentById(R.id.navHostInicial) as NavHostFragment
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= DataBindingUtil.setContentView(this,R.layout.activity_main)
-        RecetasDroidApp.crearCanalNotificacion()
-        peticionServicioRecetas = PeticionServicioRecetas()
-        // enableNotifications()
-        preparaRecuperacionListado()
-        creaNotificacionBuilder()
-        agregaListeners()
-        inicializarAdaptador()
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+       // enableNotifications()
+        //creaNotificacionBuilder()
+       // findNavController(R.id.navHostInicial).navigate(R.id.listadoRecetaFragment)
     }
 
-
-    private fun agregaListeners(){
-        binding.btnLlamada.setOnClickListener {
-            inicializarAdaptador()
-            llamarRecuperacionListado()
-        }
-    }
+    //
 
 
-    private fun inicializarAdaptador(){
-        adaptadorRV= RecetasAdaptador(
-            arrayListOf()
-        ) { elemento -> listenerTapRecyclerView(elemento) }
-
-        binding.rvRecetas.adapter=adaptadorRV
 
 
-    }
 
-    private fun listenerTapRecyclerView(receta:Recetas){
-        Toast.makeText(this,receta.nombre,Toast.LENGTH_SHORT).show()
 
-    }
-
-    private fun creaNotificacionBuilder(){
+    private fun creaNotificacionBuilder() {
         /*
         val intent = Intent(this, AlertDetails::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
@@ -89,67 +65,38 @@ class MainActivity : AppCompatActivity() {
         */
 
         val builder = NotificationCompat.Builder(this, RecetasDroidApp.CHANNEL_ID)
-                    .setSmallIcon(com.google.android.material.R.drawable.notify_panel_notification_icon_bg)
-                    .setContentTitle("My notification")
-                    .setContentText("Hello World!")
-                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                    // Set the intent that will fire when the user taps the notification
-                    // .setContentIntent(pendingIntent)
-                    .setAutoCancel(true)
+            .setSmallIcon(com.google.android.material.R.drawable.notify_panel_notification_icon_bg)
+            .setContentTitle("My notification")
+            .setContentText("Hello World!")
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            // Set the intent that will fire when the user taps the notification
+            // .setContentIntent(pendingIntent)
+            .setAutoCancel(true)
 
 
-            with(NotificationManagerCompat.from(this)) {
-                // notificationId is a unique int for each notification that you must define
-                if (ActivityCompat.checkSelfPermission(
-                        applicationContext,
-                        Manifest.permission.POST_NOTIFICATIONS
-                    ) != PackageManager.PERMISSION_GRANTED
-                ) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
-                    return
-                }
-                notify(100600, builder.build())
+        with(NotificationManagerCompat.from(this)) {
+            // notificationId is a unique int for each notification that you must define
+            if (ActivityCompat.checkSelfPermission(
+                    applicationContext,
+                    Manifest.permission.POST_NOTIFICATIONS
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return
             }
-
-    }
-
-    private fun llamarRecuperacionListado(){
-        binding.barraProgreso.visibility= View.VISIBLE
-        vmRecetas.recuperaListadoRecetasMockeableIO(peticionServicioRecetas)
-    }
-
-    private fun preparaRecuperacionListado(){  // viewLifecycleOwner -> Fragment
-        vmRecetas.resultadoProceso.observe(this){ estado ->
-            when (estado){
-                    is UIState.Success -> {
-                        Log.d("RECETAS","Llamada ok")
-                        binding.barraProgreso.visibility= View.GONE
-                        actualizaRecyclerRecetas(estado.data.datosRecetas)
-                    }
-                    is UIState.Error -> {
-                        binding.barraProgreso.visibility= View.GONE
-                        // Ocultar cuadro de dialogo de error y/o reintentar
-                        Log.d("RECETAS","Ocurrio un error:* ${estado.error}, la excepcion es: ${estado.exception} *")
-                    }
-                else -> Unit
-            }
-
+            notify(100600, builder.build())
         }
 
     }
 
 
-    @SuppressLint("NotifyDataSetChanged")
-    private fun actualizaRecyclerRecetas(datosRecetas: List<Recetas>) {
-        adaptadorRV.listaRecetas=datosRecetas.toMutableList()
-        adaptadorRV.notifyDataSetChanged()
-    }
+
 
 
     private fun enableNotifications() {
@@ -171,7 +118,7 @@ class MainActivity : AppCompatActivity() {
             AlertDialog.Builder(this).setTitle(R.string.app_name)
                 .setMessage("Motivo del permiso").setCancelable(false)
                 .setPositiveButton(android.R.string.ok) { _, _ ->
-                 notificationsPermissionLauncher.launch(permission)
+                    notificationsPermissionLauncher.launch(permission)
                 }.setNegativeButton("Negativo") { _, _ ->
 
                 }.show()
@@ -195,7 +142,7 @@ class MainActivity : AppCompatActivity() {
         ActivityResultContracts.RequestPermission()
     ) { granted ->
         if (granted) {
-                  return@registerForActivityResult
+            return@registerForActivityResult
         }
 
         if (shouldOpenSettings(PermissionType.NOTIFICATIONS)) {
@@ -210,11 +157,11 @@ class MainActivity : AppCompatActivity() {
     private val openSettingsLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) {
-            if (NotificationManagerCompat.from(this.applicationContext).areNotificationsEnabled()) {
+        if (NotificationManagerCompat.from(this.applicationContext).areNotificationsEnabled()) {
 
-            } else {
+        } else {
 
-            }
+        }
 
     }
 
@@ -231,17 +178,26 @@ class MainActivity : AppCompatActivity() {
         }
 
         if (permission != null) {
-            if (!shouldShowRequestPermissionRationale(permission) && pendingRationales.contains(permissionType)) {
+            if (!shouldShowRequestPermissionRationale(permission) && pendingRationales.contains(
+                    permissionType
+                )
+            ) {
                 pendingRationales.remove(permissionType)
                 return false
             }
 
-            if (shouldShowRequestPermissionRationale(permission) && pendingRationales.contains(permissionType)) {
+            if (shouldShowRequestPermissionRationale(permission) && pendingRationales.contains(
+                    permissionType
+                )
+            ) {
                 pendingRationales.remove(permissionType)
                 return false
             }
 
-            if (shouldShowRequestPermissionRationale(permission) && !pendingRationales.contains(permissionType)) {
+            if (shouldShowRequestPermissionRationale(permission) && !pendingRationales.contains(
+                    permissionType
+                )
+            ) {
                 return false
             }
         }
@@ -253,18 +209,17 @@ class MainActivity : AppCompatActivity() {
     private val pendingRationales = mutableListOf<PermissionType>()
 
 
-
     private fun showSettingsPrompt(permissionType: PermissionType) {
         AlertDialog.Builder(this).setTitle(R.string.app_name)
             .setMessage("Permiso rationales")
             .setCancelable(false)
             .setPositiveButton("PositivoM") { _, _ ->
-                   openSettingsLauncher.launch(Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
+                openSettingsLauncher.launch(Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
                     data = Uri.fromParts("package", packageName, null)
                 })
             }
             .setNegativeButton("NegativoSSP") { _, _ ->
-                    when (permissionType) {
+                when (permissionType) {
                     PermissionType.NOTIFICATIONS -> {}
                     PermissionType.LOCATION -> {}
                 }

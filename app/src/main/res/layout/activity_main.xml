@@ -10,36 +10,22 @@
         tools:context=".MainActivity"
         >
 
-
+     <!--
     <Button
         android:id="@+id/btnLlamada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/titulo_btn_test"
       />
+      -->
 
-        <ProgressBar
-            android:id="@+id/barraProgreso"
-            android:visibility="invisible"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            app:layout_constraintHorizontal_bias="0.498"
-            />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvRecetas"
+       <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/navHostInicial"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:itemCount="6"
-            tools:listitem="@layout/elemento_receta"
-
-            />
-
-
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_recetas" />
 
 
     </LinearLayout>

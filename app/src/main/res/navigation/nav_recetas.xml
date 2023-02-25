@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_recetas"
+    app:startDestination="@id/listadoRecetaFragment">
+
+    <fragment
+        android:id="@+id/listadoRecetaFragment"
+        android:name="com.luis.montes.ubicaciones.aplicacion.fragmentos.ListadoRecetaFragment"
+        android:label="fragment_listado_receta"
+        tools:layout="@layout/fragment_listado_receta" />
+
+    <fragment
+        android:id="@+id/detalleRecetaFragment"
+        android:name="com.luis.montes.ubicaciones.aplicacion.fragmentos.DetalleRecetaFragment"
+        android:label="fragment_detalle_receta"
+        tools:layout="@layout/fragment_detalle_receta" />
+    <fragment
+        android:id="@+id/ubicacionRecetasFragment"
+        android:name="com.luis.montes.ubicaciones.aplicacion.fragmentos.UbicacionRecetasFragment"
+        android:label="fragment_ubicacion_recetas"
+        tools:layout="@layout/fragment_ubicacion_recetas" />
+
+</navigation>

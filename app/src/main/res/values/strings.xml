@@ -4,4 +4,6 @@
     <string name="titulo_pais">PAIS</string>
     <string name="titulo_platillo">Nombre del platillo</string>
     <string name="url_invalida">#</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
